@@ -172,7 +172,7 @@ touch ./src/nodes/+Node.js
 </Tabs>
 
 :::caution
-[Design Express Fabrica](../../design/default.md)가 Node에 접근하기 위해서는 파일명이 `+<file_name>.js`의 패턴으로 작성되어야 합니다.<br/>
+[Design Express Fabrica](/design)가 Node에 접근하기 위해서는 파일명이 `+<file_name>.js`의 패턴으로 작성되어야 합니다.<br/>
 자세한 내용은 [Create Node](./create_node.md#filename-pattern) 문서를 확인해주시기 바랍니다.
 :::
 

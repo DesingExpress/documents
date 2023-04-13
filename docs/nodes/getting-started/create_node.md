@@ -19,7 +19,7 @@ Nodes 개발환경을 구축하지 않았다면 [Make Project](./make_project.md
 ## Path & Name Pattern
 
 모든 Node의 소스코드 파일은 `src/nodes` 하위에 들어갑니다.<br/>
-해당 디렉토리의 하위 깊이와는 상관없이 파일명 앞 `+`가 붙는 `js`파일은 모두 [Fabrica](../../design/default.md)에서 접근 가능합니다.
+해당 디렉토리의 하위 깊이와는 상관없이 파일명 앞 `+`가 붙는 `js`파일은 모두 [Fabrica](/design)에서 접근 가능합니다.
 
 ```bash title="Example Pattern"
 src/nodes/+mynode.js
@@ -29,7 +29,7 @@ src/nodes/depth1/depth2/../depthN/+deeeepNode.js
 
 :::note
 `src/nodes` 하위 파일은 패턴과 상관없이 해당 Nodes 프로젝트에서 `import` / `export`가 가능합니다.<br/>
-다만 `+`가 붙은 파일에사 export한 Node만 [Fabrica](../../design/default.md)에서 사용자가 접근을 할 수 없습니다.
+다만 `+`가 붙은 파일에사 export한 Node만 [Fabrica](/design)에서 사용자가 접근을 할 수 없습니다.
 :::
 
 ## Extend Class Type
@@ -56,8 +56,6 @@ Node의 확장 Class Type은 총 3가지가 있습니다.
 
 ## Create Pure Node
 
-### 
-
 ```js title="src/nodes/+Node.js"
 import { Pure } from "@design-express/fabrica";
 
@@ -75,6 +73,33 @@ export class yourNode extends Pure {
   onExecute() {
     const _input = this.getInputData(1);
     this.setOutputData(1, _input + 1);
+  }
+}
+```
+
+## Create ImPure Node
+
+```js title="src/nodes/+ImPureNode.js"
+import { ImPure } from "@design-express/fabrica";
+
+export class yourNode extends ImPure {
+  static path = "myNodes";
+  static title = "myImPureNode";
+  static description = "This is my ImPure node!";
+
+  constructor() {
+    super({ in: true, out: true });
+    this.addInput("input", "number");
+    this.addOutput("output", "number");
+    this.increaseValue = 0;
+  }
+
+  onExecute() {
+    const _input = this.getInputData(1);
+    this.setOutputData(1, _input + this.increaseValue);
+    this.triggerSlot(0);
+
+    this.increaseValue++;
   }
 }
 ```

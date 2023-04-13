@@ -6,4 +6,4 @@ title: Structure
 ---
 
 # Structure
-
+`Node` 구조에 대해 설명하는 문서입니다.
