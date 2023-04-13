@@ -1,0 +1,139 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
+
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-font-family-monospace: IBM Plex Mono, Monaco, Consolas, monospace;
+  --ifm-font-family-base: Inter, NanumSquareNeo, sans-serif;
+
+  --dx-text-01: #ffffff;
+  --dx-text-02: #6f6f6f;
+  --dx-text-03: #8d8d8d;
+  --dx-text-04: #c6c6c6;
+  --dx-text-05: #bfbfbf;
+  --dx-text-06: #3aa4f9;
+  --dx-text-07: #8d8d8d;
+  --dx-text-08: #222222;
+  --dx-text-error: #ff8389;
+  --dx-text-link01: #179ea7;
+  --dx-text-link02: #b48c5c;
+
+  --dx-background-10: #f5f5f5;
+  --dx-background-20: #e0e0e0;
+  --dx-background-30: #c6c6c6;
+  --dx-background-40: #ababab;
+  --dx-background-50: #8d8d8d;
+  --dx-background-60: #4f4d4d;
+  --dx-background-70: #333333;
+  --dx-background-80: #262626;
+  --dx-background-90: #242424;
+  --dx-background-100: #1c1c1c;
+
+  --dx-div-01: #524c4c;
+  --dx-div-02: #686868;
+
+  --dx-button-01: #ea1c5f;
+  --dx-button-02: #d9d9d9;
+  --dx-button-03: #e5e5e5;
+  --dx-button-04: #ce1738;
+  --dx-button-05: #ee4564;
+
+  --dx-icon-01: #f4f4f4;
+  --dx-icon-02: #c6c6c6;
+  --dx-icon-03: #222222;
+
+  --dx-field-01: #262626;
+  --dx-field-02: #393939;
+
+  --dx-support-01: #ce1738;
+  --dx-support-02: #1dab45;
+  --dx-support-03: #f5c416;
+  --dx-support-04: #136ec2;
+
+  --dx-menu-01: #179ea7;
+  --dx-menu-02: #ed2f6d;
+  --dx-menu-03: #b48c5c;
+  --dx-menu-04: #6e5fcc;
+  --dx-menu-05: #6b5252;
+  --dx-menu-06: #2b658f;
+  --dx-menu-07: #5e5e5e;
+
+  --dx-cardicon-01: #ea1c5f;
+  --dx-cardicon-02: #179ea7;
+  --dx-cardicon-03: #4f89e1;
+  --dx-cardicon-04: #c6c6c6;
+
+  --dx-main: #ea1c5f;
+  --dx-secondary: #cb96b2;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+}
+.navbar.navbar-sidebar--show {
+  background-color: var(--ifm-navbar-background-color) !important;
+  -webkit-backdrop-filter: unset;
+  backdrop-filter: unset;
+}
+
+.sidebar__divider {
+  border-bottom: 1px solid var(--dx-div-02);
+  margin: 16px 0;
+}
+article video {
+  width: 100%;
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+  .navbar {
+    -webkit-backdrop-filter: blur(8px) saturate(125%);
+    backdrop-filter: blur(8px) saturate(125%);
+    background-color: color-mix(
+      in srgb,
+      var(--ifm-navbar-background-color),
+      transparent 47%
+    );
+    border: unset;
+  }
+  .footer {
+    position: relative;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 997px) {
+  .navbar {
+    margin-left: var(--doc-sidebar-width);
+  }
+  .navbar__brand {
+    display: none;
+  }
+}
